@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+
+    {% for c in categories %}
+        {{ c.name }} {{ c.articles | length }}
+    {% endfor %}
+{% endblock %}

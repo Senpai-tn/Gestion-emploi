@@ -89,6 +89,7 @@ class ComposerStaticInit463ae2d76c7d72329eec8c2b8c4d7f2b
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Component\\BrowserKit\\' => 29,
             'Symfony\\Component\\Asset\\' => 24,
+            'Symfony\\Bundle\\WebServerBundle\\' => 31,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\SecurityBundle\\' => 30,
@@ -374,6 +375,10 @@ class ComposerStaticInit463ae2d76c7d72329eec8c2b8c4d7f2b
         'Symfony\\Component\\Asset\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/asset',
+        ),
+        'Symfony\\Bundle\\WebServerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/web-server-bundle',
         ),
         'Symfony\\Bundle\\WebProfilerBundle\\' => 
         array (
