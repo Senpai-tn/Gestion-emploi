@@ -116,4 +116,12 @@ class UserController extends AbstractController
                 'user' => $user
             ]);
     }
+
+    /**
+     * @Route("/apply",name="apply")
+     */
+    public function Apply(Request $r)
+    {
+        return new Response("hhhhh");
+    }
 }
