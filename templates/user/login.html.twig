@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container align-content-center align-items-center" style="margin: 10% 10% 10% 10%">
+        {{ form_start(form) }}
+        <div class="form-error">
+            {% for msg in app.flashes %}
+                <div class="alert alert-danger" role="alert">
+                    {{ msg[0] }}
+                </div>
+            {% endfor %}
+        </div>
+        {{ form_widget(form.username,{'attr': {'class': 'form-control','placeholder':'Username'}}) }}
+        <br>
+        {{ form_widget(form.password,{'attr': {'class': 'form-control','placeholder':'Password'}}) }}
+        <br>
+        <center>{{ form_widget(form.submit,{'attr':{'class':'btn btn-success'}}) }}</center>
+    </div>
+{% endblock %}

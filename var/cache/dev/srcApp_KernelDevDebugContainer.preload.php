@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerPRh2ja5/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerVgvZzAi/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -21,6 +21,7 @@ $classes[] = 'Symfony\Bundle\MonologBundle\MonologBundle';
 $classes[] = 'Symfony\Bundle\DebugBundle\DebugBundle';
 $classes[] = 'Symfony\Bundle\MakerBundle\MakerBundle';
 $classes[] = 'Symfony\Bundle\WebServerBundle\WebServerBundle';
+$classes[] = 'Knp\Bundle\PaginatorBundle\KnpPaginatorBundle';
 $classes[] = 'Symfony\Component\HttpClient\TraceableHttpClient';
 $classes[] = 'Symfony\Contracts\HttpClient\HttpClientInterface';
 $classes[] = 'Symfony\Component\HttpClient\HttpClient';
@@ -30,6 +31,9 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerName
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\ArticleController';
+$classes[] = 'App\Controller\UserController';
+$classes[] = 'App\Form\UserType';
+$classes[] = 'App\Repository\ApplicationRepository';
 $classes[] = 'App\Repository\ArticleRepository';
 $classes[] = 'App\Repository\CategoryRepository';
 $classes[] = 'App\Repository\UserRepository';
@@ -220,6 +224,11 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver';
 $classes[] = 'Symfony\Component\HttpKernel\Controller\TraceableArgumentResolver';
 $classes[] = 'Symfony\Component\HttpKernel\Controller\ArgumentResolver';
 $classes[] = 'App\Kernel';
+$classes[] = 'Knp\Component\Pager\Paginator';
+$classes[] = 'Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber';
+$classes[] = 'Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber';
+$classes[] = 'Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber';
+$classes[] = 'Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleAwareListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleListener';
 $classes[] = 'Symfony\Component\Mailer\EventListener\EnvelopeListener';
@@ -422,6 +431,8 @@ $classes[] = 'Symfony\Bridge\Twig\Extension\DumpExtension';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension';
 $classes[] = 'Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension';
 $classes[] = 'Symfony\Component\VarDumper\Dumper\HtmlDumper';
+$classes[] = 'Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension';
+$classes[] = 'Knp\Bundle\PaginatorBundle\Helper\Processor';
 $classes[] = 'Symfony\Bridge\Twig\AppVariable';
 $classes[] = 'Twig\RuntimeLoader\ContainerRuntimeLoader';
 $classes[] = 'Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor';

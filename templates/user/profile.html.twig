@@ -1,0 +1,162 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    <style>
+        .info
+        {
+            font-weight: bold;
+            font-family: "Yu Gothic";
+        }
+    </style>
+<div class="container align-content-center align-items-center" style="margin: 10% 10% 10% 10%;">
+    <div class="info">
+        <table class="table" border="0">
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.username }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date of sign in
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.createdAt | date("Y-m-d") }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name of company
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.username }} {{ user.companyName }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Year of graduation
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.graduationYear }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Level of education
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.educationLevel }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Experience
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.experience }}
+                </td>
+            </tr>
+        </table>
+
+        <a href="{{ path("update") }}" class="btn btn-success">Update profile</a>
+    </div>
+
+    <hr>
+
+    <h2>Articles posted : </h2>
+    {{ user.articles | length }} articles
+    <br>
+    {% for ar in user.articles %}
+        <div class="col-md-12 ftco-animate">
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+                <div class="mb-4 mb-md-0 mr-5">
+                    <div class="job-post-item-header d-flex align-items-center">
+                        <h2 class="mr-3 text-black h3">{{ ar.title }}</h2>
+                        <div class="badge-wrap">
+                                        <span class="
+                                                    {% if ar.type == "Partime" %}
+                                                        bg-primary
+                                                    {% elseif ar.type=="Full Time" %}
+                                                        bg-warning
+                                                    {% elseif ar.type=="Freelance" %}
+                                                        bg-info
+                                                    {% elseif ar.type=="Internship" %}
+                                                        bg-secondary
+                                                    {% elseif ar.type=="Temporary" %}
+                                                        bg-danger
+                                                    {% endif %}
+                                            text-white badge py-2 px-3">{{ ar.type }}</span>
+                        </div>
+                    </div>
+                    <div class="job-post-item-body d-block d-md-flex">
+                        <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{ ar.user.companyName }}</a></div>
+                        <div><span class="icon-my_location"></span> <span>{{ ar.location }}</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Articles applyed : </h2>
+    {{ user.applications | length }} articles
+    <br>
+    {% for ar in user.applications %}
+        <div class="col-md-12 ftco-animate">
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+                <div class="mb-4 mb-md-0 mr-5">
+                    <div class="job-post-item-header d-flex align-items-center">
+                        <h2 class="mr-3 text-black h3">{{ ar.article.title }}</h2>
+                        <div class="badge-wrap">
+                                        <span class="
+                                                    {% if ar.article.type == "Partime" %}
+                                                        bg-primary
+                                                    {% elseif ar.article.type=="Full Time" %}
+                                                        bg-warning
+                                                    {% elseif ar.article.type=="Freelance" %}
+                                                        bg-info
+                                                    {% elseif ar.article.type=="Internship" %}
+                                                        bg-secondary
+                                                    {% elseif ar.article.type=="Temporary" %}
+                                                        bg-danger
+                                                    {% endif %}
+                                            text-white badge py-2 px-3">{{ ar.article.type }}</span>
+                        </div>
+                    </div>
+                    <div class="job-post-item-body d-block d-md-flex">
+                        <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{ ar.article.user.companyName }}</a></div>
+                        <div><span class="icon-my_location"></span> <span>{{ ar.article.location }}</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

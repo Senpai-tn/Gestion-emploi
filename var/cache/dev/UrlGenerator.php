@@ -15,5 +15,9 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
-    'article' => [[], ['_controller' => 'App\\Controller\\ArticleController::index'], [], [['text', '/article']], [], []],
+    'index' => [[], ['_controller' => 'App\\Controller\\ArticleController::index'], [], [['text', '/']], [], []],
+    'login' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/login']], [], []],
+    'register' => [[], ['_controller' => 'App\\Controller\\UserController::register'], [], [['text', '/register']], [], []],
+    'profile' => [[], ['_controller' => 'App\\Controller\\UserController::profile'], [], [['text', '/profile']], [], []],
+    'update' => [[], ['_controller' => 'App\\Controller\\UserController::update'], [], [['text', '/update']], [], []],
 ];
