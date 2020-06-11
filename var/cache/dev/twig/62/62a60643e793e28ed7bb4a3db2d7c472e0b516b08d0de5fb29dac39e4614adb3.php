@@ -65,7 +65,9 @@ class __TwigTemplate_2a9acea97b7ae4443f84841509dc5464e66e12661f789bdf0290064e084
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello UserController!";
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 3, $this->source); })()), "username", [], "any", false, false, false, 3), "html", null, true);
+        echo " ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -181,10 +183,52 @@ class __TwigTemplate_2a9acea97b7ae4443f84841509dc5464e66e12661f789bdf0290064e084
         echo "
                 </td>
             </tr>
+            <tr>
+                <td>
+                    Type
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    ";
+        // line 90
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 90, $this->source); })()), "type", [], "any", false, false, false, 90), "html", null, true);
+        echo "
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Speciality
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    ";
+        // line 101
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 101, $this->source); })()), "speciality", [], "any", false, false, false, 101), "html", null, true);
+        echo "
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    ";
+        // line 112
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 112, $this->source); })()), "location", [], "any", false, false, false, 112), "html", null, true);
+        echo "
+                </td>
+            </tr>
         </table>
 
         <a href=\"";
-        // line 84
+        // line 117
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update");
         echo "\" class=\"btn btn-success\">Update profile</a>
     </div>
@@ -192,146 +236,163 @@ class __TwigTemplate_2a9acea97b7ae4443f84841509dc5464e66e12661f789bdf0290064e084
     <hr>
 
     <h2>Articles posted : </h2>
-    ";
-        // line 90
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 90, $this->source); })()), "articles", [], "any", false, false, false, 90)), "html", null, true);
-        echo " articles
+    <span id=\"nb_articles\">";
+        // line 123
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 123, $this->source); })())), "html", null, true);
+        echo " </span>articles
     <br>
     ";
-        // line 92
+        // line 125
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 92, $this->source); })()), "articles", [], "any", false, false, false, 92));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 125, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["ar"]) {
-            // line 93
-            echo "        <div class=\"col-md-12 ftco-animate\">
+            // line 126
+            echo "        ";
+            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["ar"], "deletedAt", [], "any", false, false, false, 126), null)) {
+                // line 127
+                echo "            <div class=\"col-md-12 ftco-animate\" id=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "id", [], "any", false, false, false, 127), "html", null, true);
+                echo "\">
             <div class=\"job-post-item bg-white p-4 d-block d-md-flex align-items-center\">
                 <div class=\"mb-4 mb-md-0 mr-5\">
                     <div class=\"job-post-item-header d-flex align-items-center\">
                         <h2 class=\"mr-3 text-black h3\">";
-            // line 97
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "title", [], "any", false, false, false, 97), "html", null, true);
-            echo "</h2>
+                // line 131
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "title", [], "any", false, false, false, 131), "html", null, true);
+                echo "</h2>
                         <div class=\"badge-wrap\">
                                         <span class=\"
                                                     ";
-            // line 100
-            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["ar"], "type", [], "any", false, false, false, 100), "Partime")) {
-                // line 101
-                echo "                                                        bg-primary
+                // line 134
+                if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["ar"], "type", [], "any", false, false, false, 134), "Partime")) {
+                    // line 135
+                    echo "                                                        bg-primary
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 102
-$context["ar"], "type", [], "any", false, false, false, 102), "Full Time")) {
-                // line 103
-                echo "                                                        bg-warning
+                } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,                 // line 136
+$context["ar"], "type", [], "any", false, false, false, 136), "Full Time")) {
+                    // line 137
+                    echo "                                                        bg-warning
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 104
-$context["ar"], "type", [], "any", false, false, false, 104), "Freelance")) {
-                // line 105
-                echo "                                                        bg-info
+                } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,                 // line 138
+$context["ar"], "type", [], "any", false, false, false, 138), "Freelance")) {
+                    // line 139
+                    echo "                                                        bg-info
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 106
-$context["ar"], "type", [], "any", false, false, false, 106), "Internship")) {
-                // line 107
-                echo "                                                        bg-secondary
+                } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,                 // line 140
+$context["ar"], "type", [], "any", false, false, false, 140), "Internship")) {
+                    // line 141
+                    echo "                                                        bg-secondary
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 108
-$context["ar"], "type", [], "any", false, false, false, 108), "Temporary")) {
-                // line 109
-                echo "                                                        bg-danger
+                } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,                 // line 142
+$context["ar"], "type", [], "any", false, false, false, 142), "Temporary")) {
+                    // line 143
+                    echo "                                                        bg-danger
                                                     ";
-            }
-            // line 111
-            echo "                                            text-white badge py-2 px-3\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "type", [], "any", false, false, false, 111), "html", null, true);
-            echo "</span>
+                }
+                // line 145
+                echo "                                            text-white badge py-2 px-3\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "type", [], "any", false, false, false, 145), "html", null, true);
+                echo "</span>
                         </div>
                     </div>
                     <div class=\"job-post-item-body d-block d-md-flex\">
                         <div class=\"mr-3\"><span class=\"icon-layers\"></span> <a href=\"#\">";
-            // line 115
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "user", [], "any", false, false, false, 115), "companyName", [], "any", false, false, false, 115), "html", null, true);
-            echo "</a></div>
+                // line 149
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "user", [], "any", false, false, false, 149), "companyName", [], "any", false, false, false, 149), "html", null, true);
+                echo "</a></div>
                         <div><span class=\"icon-my_location\"></span> <span>";
-            // line 116
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "location", [], "any", false, false, false, 116), "html", null, true);
-            echo "</span></div>
+                // line 150
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "location", [], "any", false, false, false, 150), "html", null, true);
+                echo "</span></div>
                     </div>
                 </div>
-
+                <div class=\"ml-auto d-flex\">
+                    <a  href=\"";
+                // line 154
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_article", ["id" => twig_get_attribute($this->env, $this->source, $context["ar"], "id", [], "any", false, false, false, 154)]), "html", null, true);
+                echo "\"   class=\"btn btn-info py-2 mr-1\">Update</a>
+                    <button  onclick=\"Delete(";
+                // line 155
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ar"], "id", [], "any", false, false, false, 155), "html", null, true);
+                echo ")\"   class=\"btn btn-danger py-2 mr-1\">Delete</button>
+                </div>
             </div>
         </div>
-    ";
+        ";
+            }
+            // line 160
+            echo "    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ar'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 123
+        // line 161
         echo "
     <hr>
 
     <h2>Articles applyed : </h2>
     ";
-        // line 127
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 127, $this->source); })()), "applications", [], "any", false, false, false, 127)), "html", null, true);
+        // line 165
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 165, $this->source); })()), "applications", [], "any", false, false, false, 165)), "html", null, true);
         echo " articles
     <br>
     ";
-        // line 129
+        // line 167
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 129, $this->source); })()), "applications", [], "any", false, false, false, 129));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 167, $this->source); })()), "applications", [], "any", false, false, false, 167));
         foreach ($context['_seq'] as $context["_key"] => $context["ar"]) {
-            // line 130
+            // line 168
             echo "        <div class=\"col-md-12 ftco-animate\">
             <div class=\"job-post-item bg-white p-4 d-block d-md-flex align-items-center\">
                 <div class=\"mb-4 mb-md-0 mr-5\">
                     <div class=\"job-post-item-header d-flex align-items-center\">
                         <h2 class=\"mr-3 text-black h3\">";
-            // line 134
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 134), "title", [], "any", false, false, false, 134), "html", null, true);
+            // line 172
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 172), "title", [], "any", false, false, false, 172), "html", null, true);
             echo "</h2>
                         <div class=\"badge-wrap\">
                                         <span class=\"
                                                     ";
-            // line 137
-            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 137), "type", [], "any", false, false, false, 137), "Partime")) {
-                // line 138
+            // line 175
+            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 175), "type", [], "any", false, false, false, 175), "Partime")) {
+                // line 176
                 echo "                                                        bg-primary
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 139
-$context["ar"], "article", [], "any", false, false, false, 139), "type", [], "any", false, false, false, 139), "Full Time")) {
-                // line 140
+            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 177
+$context["ar"], "article", [], "any", false, false, false, 177), "type", [], "any", false, false, false, 177), "Full Time")) {
+                // line 178
                 echo "                                                        bg-warning
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 141
-$context["ar"], "article", [], "any", false, false, false, 141), "type", [], "any", false, false, false, 141), "Freelance")) {
-                // line 142
+            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 179
+$context["ar"], "article", [], "any", false, false, false, 179), "type", [], "any", false, false, false, 179), "Freelance")) {
+                // line 180
                 echo "                                                        bg-info
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 143
-$context["ar"], "article", [], "any", false, false, false, 143), "type", [], "any", false, false, false, 143), "Internship")) {
-                // line 144
+            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 181
+$context["ar"], "article", [], "any", false, false, false, 181), "type", [], "any", false, false, false, 181), "Internship")) {
+                // line 182
                 echo "                                                        bg-secondary
                                                     ";
-            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 145
-$context["ar"], "article", [], "any", false, false, false, 145), "type", [], "any", false, false, false, 145), "Temporary")) {
-                // line 146
+            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 183
+$context["ar"], "article", [], "any", false, false, false, 183), "type", [], "any", false, false, false, 183), "Temporary")) {
+                // line 184
                 echo "                                                        bg-danger
                                                     ";
             }
-            // line 148
+            // line 186
             echo "                                            text-white badge py-2 px-3\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 148), "type", [], "any", false, false, false, 148), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 186), "type", [], "any", false, false, false, 186), "html", null, true);
             echo "</span>
                         </div>
                     </div>
                     <div class=\"job-post-item-body d-block d-md-flex\">
                         <div class=\"mr-3\"><span class=\"icon-layers\"></span> <a href=\"#\">";
-            // line 152
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 152), "user", [], "any", false, false, false, 152), "companyName", [], "any", false, false, false, 152), "html", null, true);
+            // line 190
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 190), "user", [], "any", false, false, false, 190), "companyName", [], "any", false, false, false, 190), "html", null, true);
             echo "</a></div>
                         <div><span class=\"icon-my_location\"></span> <span>";
-            // line 153
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 153), "location", [], "any", false, false, false, 153), "html", null, true);
+            // line 191
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ar"], "article", [], "any", false, false, false, 191), "location", [], "any", false, false, false, 191), "html", null, true);
             echo "</span></div>
                     </div>
                 </div>
@@ -343,9 +404,30 @@ $context["ar"], "article", [], "any", false, false, false, 145), "type", [], "an
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ar'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 160
+        // line 198
         echo "
 </div>
+
+    <script>
+        function Delete(id) {
+            \$.ajax({
+                url: \"";
+        // line 204
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_article");
+        echo "\" ,
+                data: {
+                    'id' : id
+                },
+                dataType : 'text',
+                type: 'POST',
+                success : function (data) {
+
+                    \$(\"#\"+id).html(\"\");
+                    \$(\"#nb_articles\").html(parseInt(\$(\"#nb_articles\").html())-1+\" \");
+                }
+            });
+        }
+    </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -367,14 +449,14 @@ $context["ar"], "article", [], "any", false, false, false, 145), "type", [], "an
 
     public function getDebugInfo()
     {
-        return array (  347 => 160,  334 => 153,  330 => 152,  322 => 148,  318 => 146,  316 => 145,  313 => 144,  311 => 143,  308 => 142,  306 => 141,  303 => 140,  301 => 139,  298 => 138,  296 => 137,  290 => 134,  284 => 130,  280 => 129,  275 => 127,  269 => 123,  256 => 116,  252 => 115,  244 => 111,  240 => 109,  238 => 108,  235 => 107,  233 => 106,  230 => 105,  228 => 104,  225 => 103,  223 => 102,  220 => 101,  218 => 100,  212 => 97,  206 => 93,  202 => 92,  197 => 90,  188 => 84,  180 => 79,  166 => 68,  152 => 57,  136 => 46,  122 => 35,  108 => 24,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  416 => 204,  408 => 198,  395 => 191,  391 => 190,  383 => 186,  379 => 184,  377 => 183,  374 => 182,  372 => 181,  369 => 180,  367 => 179,  364 => 178,  362 => 177,  359 => 176,  357 => 175,  351 => 172,  345 => 168,  341 => 167,  336 => 165,  330 => 161,  324 => 160,  316 => 155,  312 => 154,  305 => 150,  301 => 149,  293 => 145,  289 => 143,  287 => 142,  284 => 141,  282 => 140,  279 => 139,  277 => 138,  274 => 137,  272 => 136,  269 => 135,  267 => 134,  261 => 131,  253 => 127,  250 => 126,  246 => 125,  241 => 123,  232 => 117,  224 => 112,  210 => 101,  196 => 90,  182 => 79,  168 => 68,  154 => 57,  138 => 46,  124 => 35,  110 => 24,  90 => 6,  80 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %} {{ user.username }} {% endblock %}
 
 {% block body %}
     <style>
@@ -453,6 +535,39 @@ $context["ar"], "article", [], "any", false, false, false, 145), "type", [], "an
                     {{ user.experience }}
                 </td>
             </tr>
+            <tr>
+                <td>
+                    Type
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.type }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Speciality
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.speciality }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.location }}
+                </td>
+            </tr>
         </table>
 
         <a href=\"{{ path(\"update\") }}\" class=\"btn btn-success\">Update profile</a>
@@ -461,10 +576,11 @@ $context["ar"], "article", [], "any", false, false, false, 145), "type", [], "an
     <hr>
 
     <h2>Articles posted : </h2>
-    {{ user.articles | length }} articles
+    <span id=\"nb_articles\">{{ articles | length }} </span>articles
     <br>
-    {% for ar in user.articles %}
-        <div class=\"col-md-12 ftco-animate\">
+    {% for ar in articles %}
+        {% if ar.deletedAt == null %}
+            <div class=\"col-md-12 ftco-animate\" id=\"{{ ar.id }}\">
             <div class=\"job-post-item bg-white p-4 d-block d-md-flex align-items-center\">
                 <div class=\"mb-4 mb-md-0 mr-5\">
                     <div class=\"job-post-item-header d-flex align-items-center\">
@@ -490,9 +606,13 @@ $context["ar"], "article", [], "any", false, false, false, 145), "type", [], "an
                         <div><span class=\"icon-my_location\"></span> <span>{{ ar.location }}</span></div>
                     </div>
                 </div>
-
+                <div class=\"ml-auto d-flex\">
+                    <a  href=\"{{ path(\"update_article\",{\"id\": ar.id }) }}\"   class=\"btn btn-info py-2 mr-1\">Update</a>
+                    <button  onclick=\"Delete({{ ar.id }})\"   class=\"btn btn-danger py-2 mr-1\">Delete</button>
+                </div>
             </div>
         </div>
+        {% endif %}
     {% endfor %}
 
     <hr>
@@ -533,6 +653,24 @@ $context["ar"], "article", [], "any", false, false, false, 145), "type", [], "an
     {% endfor %}
 
 </div>
+
+    <script>
+        function Delete(id) {
+            \$.ajax({
+                url: \"{{ path(\"delete_article\") }}\" ,
+                data: {
+                    'id' : id
+                },
+                dataType : 'text',
+                type: 'POST',
+                success : function (data) {
+
+                    \$(\"#\"+id).html(\"\");
+                    \$(\"#nb_articles\").html(parseInt(\$(\"#nb_articles\").html())-1+\" \");
+                }
+            });
+        }
+    </script>
 {% endblock %}
 ", "user/profile.html.twig", "C:\\wamp64\\www\\Gestion emplois\\Gestion_emplois\\templates\\user\\profile.html.twig");
     }

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %} {{ user.username }} {% endblock %}
 
 {% block body %}
     <style>
@@ -79,6 +79,39 @@
                     {{ user.experience }}
                 </td>
             </tr>
+            <tr>
+                <td>
+                    Type
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.type }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Speciality
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.speciality }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    {{ user.location }}
+                </td>
+            </tr>
         </table>
 
         <a href="{{ path("update") }}" class="btn btn-success">Update profile</a>
@@ -87,10 +120,11 @@
     <hr>
 
     <h2>Articles posted : </h2>
-    {{ user.articles | length }} articles
+    <span id="nb_articles">{{ articles | length }} </span>articles
     <br>
-    {% for ar in user.articles %}
-        <div class="col-md-12 ftco-animate">
+    {% for ar in articles %}
+        {% if ar.deletedAt == null %}
+            <div class="col-md-12 ftco-animate" id="{{ ar.id }}">
             <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
                 <div class="mb-4 mb-md-0 mr-5">
                     <div class="job-post-item-header d-flex align-items-center">
@@ -116,9 +150,13 @@
                         <div><span class="icon-my_location"></span> <span>{{ ar.location }}</span></div>
                     </div>
                 </div>
-
+                <div class="ml-auto d-flex">
+                    <a  href="{{ path("update_article",{"id": ar.id }) }}"   class="btn btn-info py-2 mr-1">Update</a>
+                    <button  onclick="Delete({{ ar.id }})"   class="btn btn-danger py-2 mr-1">Delete</button>
+                </div>
             </div>
         </div>
+        {% endif %}
     {% endfor %}
 
     <hr>
@@ -159,4 +197,22 @@
     {% endfor %}
 
 </div>
+
+    <script>
+        function Delete(id) {
+            $.ajax({
+                url: "{{ path("delete_article") }}" ,
+                data: {
+                    'id' : id
+                },
+                dataType : 'text',
+                type: 'POST',
+                success : function (data) {
+
+                    $("#"+id).html("");
+                    $("#nb_articles").html(parseInt($("#nb_articles").html())-1+" ");
+                }
+            });
+        }
+    </script>
 {% endblock %}

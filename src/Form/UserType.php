@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,6 +22,18 @@ class UserType extends AbstractType
             ->add('educationLevel')
             ->add('graduationYear')
             ->add('experience')
+            ->add('type',ChoiceType::class ,
+                [
+                'choices'  => [
+                    'Partime' => "Partime",
+                    'Full Time' => "Full Time",
+                    'Freelance' => "Freelance",
+                    'Internship' => "Internship",
+                    'Temporary' => "Temporary",
+                            ],
+                ])
+            ->add('speciality')
+            ->add('location')
             ->add( 'submit',SubmitType::class)
         ;
     }

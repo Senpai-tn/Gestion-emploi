@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Application;
+use App\Entity\Article;
 use App\Entity\User;
 use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -74,6 +76,19 @@ class UserController extends AbstractController
 
     }
 
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logout(Request $r)
+    {
+        $session = $r->getSession();
+
+                $session->set("user_id",null);
+                return $this->redirect($this->generateUrl("index"));
+
+
+    }
+
 
     /**
      * @Route("/profile",name="profile")
@@ -82,11 +97,12 @@ class UserController extends AbstractController
     {
         $m = $this->getDoctrine()->getManager();
         $user = $m->getRepository(User::class)->find((int)$r->getSession()->get("user_id"));
-
+        $articles = $m->getRepository(Article::class)->findBy(["deletedAt"=>null]);
         return $this->render(
             'user/profile.html.twig',
             [
-                'user'=> $user
+                'user'=> $user,
+                'articles' => $articles
             ]
         );
     }
@@ -107,11 +123,11 @@ class UserController extends AbstractController
             $m->persist($user);
             $m->flush();
             $session->set("user_id",$user->getId());
-            return $this->redirect($this->generateUrl("index"));
+            return $this->redirect($this->generateUrl("profile"));
 
         }
         else
-            return $this->render('user/register.html.twig', [
+            return $this->render('user/update.html.twig', [
                 'form' => $form->createView(),
                 'user' => $user
             ]);
@@ -122,6 +138,22 @@ class UserController extends AbstractController
      */
     public function Apply(Request $r)
     {
-        return new Response("hhhhh");
+        $m = $this->getDoctrine()->getManager();
+        $a = new Application();
+        $a->setCreatedAt(new \DateTime());
+        $u = $m->getRepository(User::class)->find((int)$r->getSession()->get("user_id"));
+        $article = $m->getRepository(Article::class)->find((int)$r->request->get("id"));
+        $a->setUser($u);
+        $a->setArticle($article);
+        $m->persist($a);
+        $m->flush();
+
+        return new Response("success");
+
     }
+
+
+
+
+
 }

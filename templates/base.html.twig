@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Gestion emploi{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <title>JobPortal - Free Bootstrap 4 Template by Colorlib</title>
         <meta charset="utf-8">
@@ -34,7 +34,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="color: blue">JobPortal</a>
+            <a class="navbar-brand" href="{{ path("index") }}" style="color: blue">JobPortal</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
@@ -46,6 +46,7 @@
                         <li class="nav-item cta {% if app.request.get("_route") == "profile" %} active {% endif %} ">
                             <a href="{{ path("profile") }}" class="nav-link" style="border-radius: 15px;text-align: center">Profile</a>
                         </li>
+
                     {% else %}
                         <li class="nav-item cta {% if app.request.get("_route") == "login" %} active {% endif %}">
                             <a href="{{ path("login") }}" class="nav-link" style="  border-radius: 15px;text-align: center">Login</a>
@@ -55,8 +56,13 @@
                             <a href="{{ path("register") }}" class="nav-link" style="  border-radius: 15px;text-align: center">Register</a>
                         </li>
                     {% endif %}
-                    <li class="nav-item cta"><a href="new-post.html" class="nav-link" style="  border-radius: 15px;text-align: center">Post a Job</a></li>
-                    <li class="nav-item cta"><a href="job-post.html" class="nav-link" style="  border-radius: 15px;text-align: center">Want a Job</a></li>
+                    {% if app.session.get("user_id")  %}
+                        <li class="nav-item cta {% if app.request.get("_route") == "add_article" %} active {% endif %}"><a href="{{ path("add_article") }}" class="nav-link" style="  border-radius: 15px;text-align: center">Post a Job</a></li>
+
+                        <li class="nav-item cta">
+                            <a href="{{ path("logout") }}" class="nav-link" style="border-radius: 15px;text-align: center;background-color: red;border-color: darkred">Logout</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -84,7 +90,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{{ asset("js/google-map.js") }}"></script>
     <script src="{{ asset("js/main.js") }}"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
         {% block javascripts %}{% endblock %}

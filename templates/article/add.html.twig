@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container align-content-center align-items-center" style="margin: 10% 10% 10% 10%">
+{{ form_start(form) }}
+
+    {{ form_widget(form.title,{'attr':{'class': 'form-control','placeholder':'Title'}}) }}
+    {{ form_widget(form.location,{'attr':{'class': 'form-control','placeholder':'Location'}}) }}
+    {{ form_widget(form.nb_poste,{'attr':{'class': 'form-control','placeholder':'Number of posts','min':0}}) }}
+    Type :
+    {{ form_widget(form.type,{'attr':{'class': 'form-control'}}) }}
+    Category :
+    {{ form_widget(form.category,{'attr':{'class': 'form-control'}}) }}
+    {{ form_widget(form.submit,{'attr':{'class': 'btn btn-success'}}) }}
+
+{{ form_end(form) }}
+</div>
+{% endblock %}
+

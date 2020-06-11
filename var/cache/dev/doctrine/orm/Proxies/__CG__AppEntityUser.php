@@ -66,10 +66,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'companyName', '' . "\0" . 'App\\Entity\\User' . "\0" . 'educationLevel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'graduationYear', '' . "\0" . 'App\\Entity\\User' . "\0" . 'experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'applications'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'companyName', '' . "\0" . 'App\\Entity\\User' . "\0" . 'educationLevel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'graduationYear', '' . "\0" . 'App\\Entity\\User' . "\0" . 'experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'applications', '' . "\0" . 'App\\Entity\\User' . "\0" . 'speciality', '' . "\0" . 'App\\Entity\\User' . "\0" . 'location', '' . "\0" . 'App\\Entity\\User' . "\0" . 'type'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'companyName', '' . "\0" . 'App\\Entity\\User' . "\0" . 'educationLevel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'graduationYear', '' . "\0" . 'App\\Entity\\User' . "\0" . 'experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'applications'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'username', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'companyName', '' . "\0" . 'App\\Entity\\User' . "\0" . 'educationLevel', '' . "\0" . 'App\\Entity\\User' . "\0" . 'graduationYear', '' . "\0" . 'App\\Entity\\User' . "\0" . 'experience', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'applications', '' . "\0" . 'App\\Entity\\User' . "\0" . 'speciality', '' . "\0" . 'App\\Entity\\User' . "\0" . 'location', '' . "\0" . 'App\\Entity\\User' . "\0" . 'type'];
     }
 
     /**
@@ -409,6 +409,72 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeApplication', [$application]);
 
         return parent::removeApplication($application);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSpeciality(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSpeciality', []);
+
+        return parent::getSpeciality();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSpeciality(string $speciality): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSpeciality', [$speciality]);
+
+        return parent::setSpeciality($speciality);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLocation(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLocation', []);
+
+        return parent::getLocation();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLocation(string $location): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLocation', [$location]);
+
+        return parent::setLocation($location);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getType(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getType', []);
+
+        return parent::getType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setType(string $type): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setType', [$type]);
+
+        return parent::setType($type);
     }
 
 }

@@ -47,4 +47,22 @@ class ArticleRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findByExampleField($title,$type,$location)
+    {
+        return $this->createQueryBuilder('u')
+            //->andWhere('u.deletedAt = :n')
+            ->andHaving('u.title like :title')
+            ->andHaving('u.type like :type')
+            ->andHaving('u.location like :location')
+            ->setParameter('title', '%'.$title.'%')
+            ->setParameter('type', '%'.$type.'%')
+            //->setParameter('n', null)
+            ->setParameter('location', '%'.$location.'%')
+            //->orderBy('u.id', 'ASC')
+            //->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

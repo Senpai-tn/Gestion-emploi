@@ -1,3 +1,17 @@
-{{ form_start(form) }}
-
-{{ form_end(form) }}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container align-content-center align-items-center" style="margin: 10% 10% 10% 10%">
+        {{ form_start(form) }}
+            {{ form_widget(form.username,{'attr':{'class': 'form-control','placeholder':'Username'}}) }}
+            {{ form_widget(form.password,{'attr':{'class': 'form-control','placeholder':'Password'}}) }}
+            {{ form_widget(form.companyName,{'attr':{'class': 'form-control','placeholder':'Name of company'}}) }}
+            {{ form_widget(form.educationLevel,{'attr':{'class': 'form-control','placeholder':'Level of education'}}) }}
+            {{ form_widget(form.graduationYear,{'attr':{'class': 'form-control','placeholder':'Year of graduation','max': '2020','min' : '1980'}}) }}
+            {{ form_widget(form.experience,{'attr':{'class': 'form-control','placeholder':'Experience','max': '30','min' : '0'}}) }}
+            Type : {{ form_widget(form.type,{'attr':{'class': 'form-control'}}) }}
+            {{ form_widget(form.speciality,{'attr':{'class': 'form-control','placeholder':'Speciality'}}) }}
+            {{ form_widget(form.location,{'attr':{'class': 'form-control','placeholder':'Location'}}) }}
+            {{ form_widget(form.submit,{'attr':{'class': 'btn btn-success'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

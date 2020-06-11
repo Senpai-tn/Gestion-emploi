@@ -14,10 +14,16 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\ArticleController::index'], null, null, null, false, false, null]],
+        '/article/add' => [[['_route' => 'add_article', '_controller' => 'App\\Controller\\ArticleController::AddArticle'], null, null, null, false, false, null]],
+        '/article/delete' => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\ArticleController::DeleteArticle'], null, null, null, false, false, null]],
+        '/article/update' => [[['_route' => 'update_article', '_controller' => 'App\\Controller\\ArticleController::UpdateArticle'], null, null, null, false, false, null]],
+        '/article/search' => [[['_route' => 'search_article', '_controller' => 'App\\Controller\\ArticleController::Search'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\UserController::register'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\UserController::logout'], null, null, null, false, false, null]],
         '/profile' => [[['_route' => 'profile', '_controller' => 'App\\Controller\\UserController::profile'], null, null, null, false, false, null]],
         '/update' => [[['_route' => 'update', '_controller' => 'App\\Controller\\UserController::update'], null, null, null, false, false, null]],
+        '/apply' => [[['_route' => 'apply', '_controller' => 'App\\Controller\\UserController::Apply'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
