@@ -83,7 +83,7 @@ class UserController extends AbstractController
     {
         $session = $r->getSession();
 
-                $session->set("user_id",null);
+                $session->remove("user_id");
                 return $this->redirect($this->generateUrl("index"));
 
 

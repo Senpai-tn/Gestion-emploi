@@ -27,11 +27,16 @@ class ArticleController extends AbstractController
         $session = $request->getSession();
         $articles = $m->getRepository(Article::class)->findBy(["deletedAt"=>null]);
         $categories = $m->getRepository(Category::class)->findAll();
-        $u  = $m->getRepository(User::class)->find($session->get("user_id"));
-        foreach ($u->getApplications() as $a)
+        if($session->has("user_id"))
         {
-            $app[$a->getId()] = $a->getArticle()->getId();
+            $u  = $m->getRepository(User::class)->find($session->get("user_id"));
+            foreach ($u->getApplications() as $a)
+            {
+                $app[$a->getId()] = $a->getArticle()->getId();
+            }
         }
+        else
+            $u = null;
         $pagination = $paginator->paginate(
             $articles,
             $request->query->getInt('page', 1), /*page number*/
@@ -126,11 +131,16 @@ class ArticleController extends AbstractController
         $articles = $m->getRepository(Article::class)->findByExampleField($title,$t,$l);
         $app = array();
         $categories = $m->getRepository(Category::class)->findAll();
-        $u  = $m->getRepository(User::class)->find($session->get("user_id"));
-        foreach ($u->getApplications() as $a)
+        if($session->has("user_id"))
         {
-            $app[$a->getId()] = $a->getArticle()->getId();
+            $u  = $m->getRepository(User::class)->find($session->get("user_id"));
+            foreach ($u->getApplications() as $a)
+            {
+                $app[$a->getId()] = $a->getArticle()->getId();
+            }
         }
+        else
+            $u = null;
         $pagination = $paginator->paginate(
             $articles,
             $r->query->getInt('page', 1), /*page number*/
