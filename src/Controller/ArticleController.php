@@ -38,6 +38,7 @@ class ArticleController extends AbstractController
             8 /*limit per page*/
         );
         return $this->render('article/index.html.twig', [
+            'total'=>$articles,
             'articles'=>$pagination,
             'categories'=>$categories,
             'ap' => $app
@@ -100,7 +101,7 @@ class ArticleController extends AbstractController
         {
             $m->persist($article);
             $m->flush();
-            return $this->redirect($this->generateUrl("index"));
+            return $this->redirect($this->generateUrl("profile"));
         }
         else
         {
@@ -136,6 +137,7 @@ class ArticleController extends AbstractController
             8 /*limit per page*/
         );
         return $this->render('article/index.html.twig', [
+            'total'=>$articles,
             'articles'=>$pagination,
             'categories'=>$categories,
             'ap' => $app

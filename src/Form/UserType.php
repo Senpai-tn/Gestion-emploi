@@ -25,7 +25,7 @@ class UserType extends AbstractType
             ->add('type',ChoiceType::class ,
                 [
                 'choices'  => [
-                    'Partime' => "Partime",
+                    'Part Time' => "Part Time",
                     'Full Time' => "Full Time",
                     'Freelance' => "Freelance",
                     'Internship' => "Internship",

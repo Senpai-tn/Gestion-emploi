@@ -76,7 +76,7 @@ class __TwigTemplate_3d5cc4aaa882a568bef402f7acef2c5d6680882a3b5cd8d384eacd6c808
                 <div class=\"col-xl-10 ftco-animate mb-5 pb-5\" data-scrollax=\" properties: { translateY: '70%' }\">
                     <p class=\"mb-4 mt-5 pt-5\" data-scrollax=\"properties: { translateY: '30%', opacity: 1.6 }\">We have <span class=\"number\" data-number=\"";
         // line 10
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 10, $this->source); })())), "html", null, true);
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 10, $this->source); })())), "html", null, true);
         echo "\">0</span> great job offers you deserve!</p>
                     <h1 class=\"mb-5\" data-scrollax=\"properties: { translateY: '30%', opacity: 1.6 }\">Your Dream <br><span>Job is Waiting</span></h1>
 
@@ -304,7 +304,7 @@ class __TwigTemplate_3d5cc4aaa882a568bef402f7acef2c5d6680882a3b5cd8d384eacd6c808
                                         <span class=\"
                                                     ";
             // line 210
-            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["a"], "type", [], "any", false, false, false, 210), "Partime")) {
+            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["a"], "type", [], "any", false, false, false, 210), "Part Time")) {
                 // line 211
                 echo "                                                        bg-primary
                                                     ";
@@ -458,7 +458,7 @@ $context["a"], "type", [], "any", false, false, false, 218), "Temporary")) {
         <div class=\"container\">
             <div class=\"row no-gutters slider-text js-fullheight align-items-center justify-content-start\" data-scrollax-parent=\"true\">
                 <div class=\"col-xl-10 ftco-animate mb-5 pb-5\" data-scrollax=\" properties: { translateY: '70%' }\">
-                    <p class=\"mb-4 mt-5 pt-5\" data-scrollax=\"properties: { translateY: '30%', opacity: 1.6 }\">We have <span class=\"number\" data-number=\"{{ articles | length }}\">0</span> great job offers you deserve!</p>
+                    <p class=\"mb-4 mt-5 pt-5\" data-scrollax=\"properties: { translateY: '30%', opacity: 1.6 }\">We have <span class=\"number\" data-number=\"{{ total | length }}\">0</span> great job offers you deserve!</p>
                     <h1 class=\"mb-5\" data-scrollax=\"properties: { translateY: '30%', opacity: 1.6 }\">Your Dream <br><span>Job is Waiting</span></h1>
 
                     <div class=\"ftco-search\">
@@ -658,7 +658,7 @@ $context["a"], "type", [], "any", false, false, false, 218), "Temporary")) {
                                     <h2 class=\"mr-3 text-black h3\">{{ a.title }}</h2>
                                     <div class=\"badge-wrap\">
                                         <span class=\"
-                                                    {% if a.type == \"Partime\" %}
+                                                    {% if a.type == \"Part Time\" %}
                                                         bg-primary
                                                     {% elseif a.type==\"Full Time\" %}
                                                         bg-warning

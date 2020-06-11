@@ -21,7 +21,7 @@ class ArticleType extends AbstractType
             ->add('nb_poste')
             ->add('type',ChoiceType::class,[
                 'choices' => [
-                    'Partime' => "Partime",
+                    'Part Time' => "Part Time",
                     'Full Time' => "Full Time",
                     'Freelance' => "Freelance",
                     'Internship' => "Internship",

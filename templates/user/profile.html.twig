@@ -131,7 +131,7 @@
                         <h2 class="mr-3 text-black h3">{{ ar.title }}</h2>
                         <div class="badge-wrap">
                                         <span class="
-                                                    {% if ar.type == "Partime" %}
+                                                    {% if ar.type == "Part Time" %}
                                                         bg-primary
                                                     {% elseif ar.type=="Full Time" %}
                                                         bg-warning
@@ -148,6 +148,8 @@
                     <div class="job-post-item-body d-block d-md-flex">
                         <div class="mr-3"><span class="icon-layers"></span> <a href="#">{{ ar.user.companyName }}</a></div>
                         <div><span class="icon-my_location"></span> <span>{{ ar.location }}</span></div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div><span class="icon-person"></span><span> {{ ar.NbPoste }} </span></div>
                     </div>
                 </div>
                 <div class="ml-auto d-flex">
